@@ -1,0 +1,121 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "%lld strokes": {
+      "comment": "Number of strokes in a character",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld stroke"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld strokes"
+                }
+              }
+            }
+          }
+        },
+        "zh-Hant": {
+          "variations": {
+            "plural": {
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld 畫"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Stroke order for %@": {
+      "localizations": {
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "「%@」的筆順"
+          }
+        }
+      }
+    },
+    "Stroke %lld of %lld": {
+      "localizations": {
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "第 %1$lld 畫，共 %2$lld 畫"
+          }
+        }
+      }
+    },
+    "Replay": {
+      "localizations": {
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "重播"
+          }
+        }
+      }
+    },
+    "Replays the animation": {
+      "localizations": {
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "重新播放筆順動畫"
+          }
+        }
+      }
+    },
+    "%@ · tap to replay": {
+      "localizations": {
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@・點一下重播"
+          }
+        }
+      }
+    },
+    "Type a Chinese character": {
+      "localizations": {
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "請輸入一個漢字"
+          }
+        }
+      }
+    },
+    "No stroke data for %@": {
+      "localizations": {
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "沒有「%@」的筆畫資料"
+          }
+        }
+      }
+    },
+    "Couldn't reach the server. Check your connection and try again.": {
+      "localizations": {
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "無法連線到伺服器，請檢查網路後再試一次。"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

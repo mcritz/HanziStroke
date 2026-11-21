@@ -4,6 +4,8 @@ import SwiftUI
 enum HanziRenderer {
     /// Wide enough to cover any stroke's outline when drawn along its median.
     static let revealWidth: CGFloat = 180
+    /// Extra outline drawn around an emphasized stroke, in grid units.
+    static let emphasisWidth: CGFloat = 36
 
     static func draw(_ character: HanziCharacter,
                      in context: GraphicsContext,
@@ -11,7 +13,8 @@ enum HanziRenderer {
                      ghostColor: Color,
                      gridColor: Color?,
                      progress: (Int) -> Double,
-                     color: (Int) -> Color) {
+                     color: (Int) -> Color,
+                     emphasized: Int? = nil) {
         var ctx = context
         let side = min(size.width, size.height)
         guard side > 0 else { return }
@@ -29,6 +32,11 @@ enum HanziRenderer {
             let p = progress(index)
             if p >= 1 {
                 ctx.fill(outline, with: .color(color(index)))
+                if index == emphasized {
+                    // Thicken the stroke so it stands out without relying on colour.
+                    ctx.stroke(outline, with: .color(color(index)),
+                               style: StrokeStyle(lineWidth: emphasisWidth, lineJoin: .round))
+                }
             } else if p > 0 {
                 // Reveal the outline by drawing a thick line along the median, clipped to the outline.
                 var clipped = ctx

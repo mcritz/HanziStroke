@@ -1,4 +1,5 @@
 import SwiftUI
+import HanziStroke
 
 struct Sample: Identifiable, Hashable {
     let character: String
@@ -33,6 +34,10 @@ private let samples: [(title: String, items: [Sample])] = [
 struct ContentView: View {
     @State private var custom = ""
     @State private var path: [Sample] = []
+    @State private var showsAcknowledgements = false
+
+    /// The ideograph the lookup field would open, or nil if it has none.
+    private var customCharacter: String? { HanziCharacter.normalize(custom) }
 
     var body: some View {
         NavigationStack(path: $path) {
@@ -44,22 +49,26 @@ struct ContentView: View {
                             .submitLabel(.go)
                             .onSubmit(openCustom)
                         Button("Show", action: openCustom)
-                            .disabled(custom.trimmingCharacters(in: .whitespaces).isEmpty)
+                            .disabled(customCharacter == nil)
                     }
                 } header: {
                     Text("Look up")
+                } footer: {
+                    if !custom.isEmpty && customCharacter == nil {
+                        Text("Enter a Chinese character.")
+                    }
                 }
 
                 ForEach(samples, id: \.title) { group in
-                    Section(group.title) {
+                    Section(LocalizedStringKey(group.title)) {
                         ForEach(group.items) { sample in
                             NavigationLink(value: sample) {
                                 HStack(spacing: 16) {
-                                    Text(sample.character)
+                                    Text(verbatim: sample.character)
                                         .font(.system(size: 34))
                                         .frame(width: 44)
                                     VStack(alignment: .leading) {
-                                        Text(sample.pinyin).font(.headline)
+                                        Text(verbatim: sample.pinyin).font(.headline)
                                         Text(sample.meaning)
                                             .font(.subheadline)
                                             .foregroundStyle(.secondary)
@@ -71,6 +80,16 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Hanzi Stroke")
+            .toolbar {
+                Button {
+                    showsAcknowledgements = true
+                } label: {
+                    Label("Acknowledgements", systemImage: "info.circle")
+                }
+            }
+            .sheet(isPresented: $showsAcknowledgements) {
+                AcknowledgementsView()
+            }
             .navigationDestination(for: Sample.self) { sample in
                 CharacterDetailView(sample: sample)
             }
@@ -78,8 +97,8 @@ struct ContentView: View {
     }
 
     private func openCustom() {
-        guard let last = custom.trimmingCharacters(in: .whitespaces).last else { return }
-        path.append(Sample(character: String(last), pinyin: "", meaning: ""))
+        guard let character = customCharacter else { return }
+        path.append(Sample(character: character, pinyin: "", meaning: ""))
         custom = ""
     }
 }

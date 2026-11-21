@@ -17,11 +17,34 @@ import HanziStroke
 HanziStrokeDemo()
 
 // Or the pieces
-let c = try await HanziDataLoader.fromCDN("書")          // or HanziDataLoader.fromBundle("書")
+let c = try await HanziDataLoader.load("書")             // bundle → disk cache → CDN
 StrokeOrderView(character: c, radicalColor: .blue)      // animated; tap to replay
 StrokeOrderView(character: c, speed: 0.5, loops: true)
 StrokeStepsView(character: c, panelSize: 56)            // one panel per stroke, start dot on the new stroke
 ```
+
+## Loading, errors and privacy
+
+`HanziDataLoader.load(_:)` normalizes the input (`HanziCharacter.normalize` keeps the last CJK
+ideograph and strips variation selectors), then checks the app bundle, then a disk cache in
+Caches, then jsDelivr, caching what it downloads. So anything looked up once works offline.
+
+Errors are a `LoadError`: `.invalidCharacter`, `.notFound`, `.badData`, `.network(URLError.Code)` or
+`.server(statusCode:)`; `isRetryable` says whether a retry button makes sense. Malformed data throws
+`HanziCharacter.DataError` instead of crashing.
+
+A CDN request sends the character and the user's IP address to jsDelivr. Bundle the characters you
+need (or self-host) to avoid that, and account for it in your App Store privacy answers.
+
+## Accessibility and localization
+
+- Reduce Motion: `StrokeOrderView` shows the finished character instead of animating.
+- VoiceOver: the view is a button with a Replay action; step panels read "Stroke 3 of 13".
+- The step chart marks the new stroke with colour, extra thickness and a start dot.
+- Step panels scale with Dynamic Type.
+- Strings are in a String Catalog with plural rules, in English and Traditional Chinese (zh-Hant).
+
+The animation pauses while off screen or in the background, including with `loops: true`.
 
 ## How it draws
 
@@ -49,11 +72,18 @@ Check the MOE site (stroke-order.learningweb.moe.edu.tw) for the reference order
 Code: MIT (see `LICENSE`). Character data: Arphic Public License (see `ARPHICPL.TXT`, also shipped in the npm package);
 ship that license with the data if you bundle it.
 
-Not compiled in the environment that produced it — run the tests in Xcode first.
 
 ## Demo app
 
 `Demo/HanziStrokeDemoApp.xcodeproj` is a small iOS app that uses this package as a local dependency:
 a list of sample characters (simplified and traditional), a field to look up any character, and a
-detail screen with the animation, replay, speed/loop/radical/grid controls and the step chart.
-Open it in Xcode, pick a simulator, and run. It loads stroke data from the CDN, so it needs a network connection.
+detail screen with the animation, replay, persistent speed/loop/radical/grid settings and the step
+chart. The sample characters are bundled (`Demo/HanziStrokeDemoApp/hanzi-data`), so they work
+offline; other characters are downloaded once and cached. It's localized in English and Traditional
+Chinese, ships a privacy manifest, and shows the Arphic license under Acknowledgements (ⓘ).
+
+## Tests
+
+`swift test` runs unit tests and snapshot tests for 了 (hook stroke), 體 (23 strokes) and 愛
+(radical colour). Reference images are in `Tests/HanziStrokeTests/__Snapshots__`; delete one to
+re-record it after an intentional rendering change.

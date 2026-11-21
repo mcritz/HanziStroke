@@ -1,7 +1,8 @@
 import SwiftUI
 
-/// Static stroke-order chart: one panel per stroke, with the new stroke highlighted
-/// and a dot where the brush starts.
+/// Static stroke-order chart: one panel per stroke. The new stroke in each panel is drawn
+/// in the highlight colour *and* thicker, with a dot where the brush starts, so it doesn't
+/// rely on colour alone. Panels grow with Dynamic Type.
 public struct StrokeStepsView: View {
     public let character: HanziCharacter
     public var panelSize: CGFloat
@@ -9,6 +10,8 @@ public struct StrokeStepsView: View {
     public var highlightColor: Color
     public var gridColor: Color?
     public var showsNumbers: Bool
+
+    @ScaledMetric(relativeTo: .body) private var typeScale: CGFloat = 1
 
     public init(character: HanziCharacter,
                 panelSize: CGFloat = 64,
@@ -25,7 +28,8 @@ public struct StrokeStepsView: View {
     }
 
     public var body: some View {
-        LazyVGrid(columns: [GridItem(.adaptive(minimum: panelSize, maximum: panelSize * 1.5), spacing: 8)],
+        let size = panelSize * typeScale
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: size, maximum: size * 1.5), spacing: 8)],
                   spacing: 8) {
             ForEach(0..<character.strokeCount, id: \.self) { step in
                 panel(step)
@@ -39,7 +43,8 @@ public struct StrokeStepsView: View {
                                ghostColor: .secondary.opacity(0.12),
                                gridColor: gridColor,
                                progress: { $0 <= step ? 1 : 0 },
-                               color: { $0 == step ? highlightColor : strokeColor })
+                               color: { $0 == step ? highlightColor : strokeColor },
+                               emphasized: step)
 
             // Start-of-stroke marker.
             if let start = character.medians[step].first {
@@ -61,6 +66,7 @@ public struct StrokeStepsView: View {
                     .padding(3)
             }
         }
-        .accessibilityLabel("Stroke \(step + 1) of \(character.strokeCount)")
+        .accessibilityElement()
+        .accessibilityLabel(Text("Stroke \(step + 1) of \(character.strokeCount)", bundle: .module))
     }
 }
