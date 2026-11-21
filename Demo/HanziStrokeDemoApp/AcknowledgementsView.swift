@@ -5,7 +5,7 @@ struct AcknowledgementsView: View {
     @Environment(\.dismiss) private var dismiss
 
     private let licenseText: String = {
-        guard let url = Bundle.main.url(forResource: "ARPHICPL", withExtension: "TXT"),
+        guard let url = Bundle.main.url(forResource: "ARPHICPL", withExtension: "TXT", subdirectory: "HanziData.bundle"),
               let text = try? String(contentsOf: url, encoding: .utf8) else { return "" }
         return text
     }()
@@ -19,7 +19,7 @@ struct AcknowledgementsView: View {
                     Link("Make Me a Hanzi on GitHub", destination: URL(string: "https://github.com/skishore/makemeahanzi")!)
                 }
                 Section("Privacy") {
-                    Text("The sample characters are built into the app. When you look up any other character for the first time, the app downloads its stroke data from the jsDelivr CDN, which receives the character and your IP address. After that, the data is stored on this device.")
+                    Text("About 3,900 common characters (roughly a sixth-grade reading level, in Traditional and Simplified forms) are built into the app and work offline. When you look up any other character for the first time, the app downloads its stroke data from the jsDelivr CDN, which receives the character and your IP address. After that, the data is stored on this device.")
                 }
                 Section("Arphic Public License") {
                     Text(verbatim: licenseText)

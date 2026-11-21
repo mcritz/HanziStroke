@@ -131,7 +131,7 @@ struct CharacterDetailView: View {
     private func load() async {
         loadError = nil
         do {
-            character = try await HanziDataLoader.load(sample.character)
+            character = try await HanziDataLoader.load(sample.character, subdirectory: "HanziData.bundle")
         } catch let error as HanziDataLoader.LoadError {
             loadError = error
         } catch {

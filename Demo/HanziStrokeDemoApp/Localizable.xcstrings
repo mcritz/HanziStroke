@@ -355,12 +355,12 @@
         }
       }
     },
-    "The sample characters are built into the app. When you look up any other character for the first time, the app downloads its stroke data from the jsDelivr CDN, which receives the character and your IP address. After that, the data is stored on this device.": {
+    "About 3,900 common characters (roughly a sixth-grade reading level, in Traditional and Simplified forms) are built into the app and work offline. When you look up any other character for the first time, the app downloads its stroke data from the jsDelivr CDN, which receives the character and your IP address. After that, the data is stored on this device.": {
       "localizations": {
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "範例字已內建於 App 中。第一次查詢其他字時，App 會從 jsDelivr CDN 下載筆畫資料，jsDelivr 會收到這個字和你的 IP 位址。之後資料會儲存在這部裝置上。"
+            "value": "App 內建約 3,900 個常用字（約國小六年級的識字量，含繁體與簡體），不需網路即可使用。第一次查詢其他字時，App 會從 jsDelivr CDN 下載筆畫資料，jsDelivr 會收到這個字和你的 IP 位址。之後資料會儲存在這部裝置上。"
           }
         }
       }

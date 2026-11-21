@@ -78,8 +78,10 @@ ship that license with the data if you bundle it.
 `Demo/HanziStrokeDemoApp.xcodeproj` is a small iOS app that uses this package as a local dependency:
 a list of sample characters (simplified and traditional), a field to look up any character, and a
 detail screen with the animation, replay, persistent speed/loop/radical/grid settings and the step
-chart. The sample characters are bundled (`Demo/HanziStrokeDemoApp/hanzi-data`), so they work
-offline; other characters are downloaded once and cached. It's localized in English and Traditional
+chart. About 3,900 characters (roughly a sixth-grade reading level, Traditional and Simplified) are
+bundled in `Demo/HanziStrokeDemoApp/HanziData.bundle` (12 MB) and work offline; other characters are
+downloaded once and cached. Regenerate the set with `python3 Scripts/make_offline_data.py`
+(`--top N` and `--max-grade N` adjust its size); see the script for how the list is chosen. It's localized in English and Traditional
 Chinese, ships a privacy manifest, and shows the Arphic license under Acknowledgements (ⓘ).
 
 ## Tests
