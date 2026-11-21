@@ -46,7 +46,7 @@ Check the MOE site (stroke-order.learningweb.moe.edu.tw) for the reference order
 
 ## License
 
-Code: yours to use. Character data: Arphic Public License (see `ARPHICPL.TXT` in the npm package);
+Code: MIT (see `LICENSE`). Character data: Arphic Public License (see `ARPHICPL.TXT`, also shipped in the npm package);
 ship that license with the data if you bundle it.
 
 Not compiled in the environment that produced it — run the tests in Xcode first.
