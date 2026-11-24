@@ -1,353 +1,43 @@
 {
-  "sourceLanguage": "en",
-  "strings": {
-    "Hanzi Stroke": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "漢字筆順"
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@×" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@×"
           }
         }
       }
     },
-    "Look up": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "查詢"
-          }
-        }
-      }
-    },
-    "Type any character…": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "輸入任一個字…"
-          }
-        }
-      }
-    },
-    "Show": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "顯示"
-          }
-        }
-      }
-    },
-    "Enter a Chinese character.": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "請輸入一個漢字。"
-          }
-        }
-      }
-    },
-    "Basics": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "基本"
-          }
-        }
-      }
-    },
-    "Common": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "常用"
-          }
-        }
-      }
-    },
-    "Traditional": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "繁體"
-          }
-        }
-      }
-    },
-    "Acknowledgements": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "致謝"
-          }
-        }
-      }
-    },
-    "Loading %@…": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "正在載入「%@」…"
-          }
-        }
-      }
-    },
-    "Reduce Motion is on, so the finished character is shown. The steps below show the order.": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "已開啟「減少動態效果」，因此直接顯示完成的字。筆順請見下方的分解步驟。"
-          }
-        }
-      }
-    },
-    "Replay": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "重播"
-          }
-        }
-      }
-    },
-    "or tap the character": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "或點一下字"
-          }
-        }
-      }
-    },
-    "Speed": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "速度"
-          }
-        }
-      }
-    },
-    "%@×": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@×"
-          }
-        }
-      }
-    },
-    "Speed %@×": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "速度 %@×"
-          }
-        }
-      }
-    },
-    "Loop": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "重複播放"
-          }
-        }
-      }
-    },
-    "Highlight radical": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "標示部首"
-          }
-        }
-      }
-    },
-    "Practice grid": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "米字格"
-          }
-        }
-      }
-    },
-    "Step by step": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "分解步驟"
-          }
-        }
-      }
-    },
-    "Can't connect": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "無法連線"
-          }
-        }
-      }
-    },
-    "Stroke data for “%@” isn't on this device yet. Check your connection and try again.": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "這部裝置上還沒有「%@」的筆畫資料。請檢查網路連線後再試一次。"
-          }
-        }
-      }
-    },
-    "Try Again": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "再試一次"
-          }
-        }
-      }
-    },
-    "No stroke data": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "沒有筆畫資料"
-          }
-        }
-      }
-    },
-    "The stroke data set doesn't include “%@”. Try a different character.": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "筆畫資料中沒有「%@」。請試試其他字。"
-          }
-        }
-      }
-    },
-    "Character data": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "字形資料"
-          }
-        }
-      }
-    },
-    "Stroke data comes from hanzi-writer-data, which is based on Make Me a Hanzi and fonts by Arphic Technology. It is used under the Arphic Public License.": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "筆畫資料來自 hanzi-writer-data，以 Make Me a Hanzi 及文鼎科技的字型為基礎，依「文鼎公眾授權書」（Arphic Public License）使用。"
-          }
-        }
-      }
-    },
-    "hanzi-writer-data on GitHub": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "GitHub 上的 hanzi-writer-data"
-          }
-        }
-      }
-    },
-    "Make Me a Hanzi on GitHub": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "GitHub 上的 Make Me a Hanzi"
-          }
-        }
-      }
-    },
-    "Privacy": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "隱私"
-          }
-        }
-      }
-    },
-    "Arphic Public License": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "文鼎公眾授權書"
-          }
-        }
-      }
-    },
-    "Done": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "完成"
-          }
-        }
-      }
-    },
-    "%lld strokes": {
-      "localizations": {
-        "en": {
-          "variations": {
-            "plural": {
-              "one": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "%lld stroke"
+    "%lld strokes" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld stroke"
                 }
               },
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "%lld strokes"
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld strokes"
                 }
               }
             }
           }
         },
-        "zh-Hant": {
-          "variations": {
-            "plural": {
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "%lld 畫"
+        "zh-Hant" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld 畫"
                 }
               }
             }
@@ -355,16 +45,329 @@
         }
       }
     },
-    "About 3,900 common characters (roughly a sixth-grade reading level, in Traditional and Simplified forms) are built into the app and work offline. When you look up any other character for the first time, the app downloads its stroke data from the jsDelivr CDN, which receives the character and your IP address. After that, the data is stored on this device.": {
-      "localizations": {
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "App 內建約 3,900 個常用字（約國小六年級的識字量，含繁體與簡體），不需網路即可使用。第一次查詢其他字時，App 會從 jsDelivr CDN 下載筆畫資料，jsDelivr 會收到這個字和你的 IP 位址。之後資料會儲存在這部裝置上。"
+    "About 3,900 common characters (roughly a sixth-grade reading level, in Traditional and Simplified forms) are built into the app and work offline. When you look up any other character for the first time, the app downloads its stroke data from the jsDelivr CDN, which receives the character and your IP address. After that, the data is stored on this device." : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App 內建約 3,900 個常用字（約國小六年級的識字量，含繁體與簡體），不需網路即可使用。第一次查詢其他字時，App 會從 jsDelivr CDN 下載筆畫資料，jsDelivr 會收到這個字和你的 IP 位址。之後資料會儲存在這部裝置上。"
+          }
+        }
+      }
+    },
+    "Acknowledgements" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "致謝"
+          }
+        }
+      }
+    },
+    "Arphic Public License" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "文鼎公眾授權書"
+          }
+        }
+      }
+    },
+    "Basics" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "基本"
+          }
+        }
+      }
+    },
+    "Can't connect" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法連線"
+          }
+        }
+      }
+    },
+    "Character data" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "字形資料"
+          }
+        }
+      }
+    },
+    "Common" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "常用"
+          }
+        }
+      }
+    },
+    "Done" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完成"
+          }
+        }
+      }
+    },
+    "Enter a Chinese character." : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請輸入一個漢字。"
+          }
+        }
+      }
+    },
+    "Hanzi Stroke" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "漢字筆順"
+          }
+        }
+      }
+    },
+    "hanzi-writer-data on GitHub" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GitHub 上的 hanzi-writer-data"
+          }
+        }
+      }
+    },
+    "Highlight radical" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "標示部首"
+          }
+        }
+      }
+    },
+    "Loading %@…" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在載入「%@」…"
+          }
+        }
+      }
+    },
+    "Look up" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "查詢"
+          }
+        }
+      }
+    },
+    "Loop" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重複播放"
+          }
+        }
+      }
+    },
+    "Make Me a Hanzi on GitHub" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GitHub 上的 Make Me a Hanzi"
+          }
+        }
+      }
+    },
+    "No stroke data" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沒有筆畫資料"
+          }
+        }
+      }
+    },
+    "or tap the character" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "或點一下字"
+          }
+        }
+      }
+    },
+    "Practice grid" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "米字格"
+          }
+        }
+      }
+    },
+    "Privacy" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "隱私"
+          }
+        }
+      }
+    },
+    "Reduce Motion is on, so the finished character is shown. The steps below show the order." : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已開啟「減少動態效果」，因此直接顯示完成的字。筆順請見下方的分解步驟。"
+          }
+        }
+      }
+    },
+    "Replay" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重播"
+          }
+        }
+      }
+    },
+    "Show" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顯示"
+          }
+        }
+      }
+    },
+    "Speed" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "速度"
+          }
+        }
+      }
+    },
+    "Speed %@×" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "速度 %@×"
+          }
+        }
+      }
+    },
+    "Step by step" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "分解步驟"
+          }
+        }
+      }
+    },
+    "Stroke data comes from hanzi-writer-data, which is based on Make Me a Hanzi and fonts by Arphic Technology. It is used under the Arphic Public License." : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "筆畫資料來自 hanzi-writer-data，以 Make Me a Hanzi 及文鼎科技的字型為基礎，依「文鼎公眾授權書」（Arphic Public License）使用。"
+          }
+        }
+      }
+    },
+    "Stroke data for “%@” isn't on this device yet. Check your connection and try again." : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "這部裝置上還沒有「%@」的筆畫資料。請檢查網路連線後再試一次。"
+          }
+        }
+      }
+    },
+    "The stroke data set doesn't include “%@”. Try a different character." : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "筆畫資料中沒有「%@」。請試試其他字。"
+          }
+        }
+      }
+    },
+    "Traditional" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "繁體"
+          }
+        }
+      }
+    },
+    "Try Again" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "再試一次"
+          }
+        }
+      }
+    },
+    "Type any character…" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "輸入任一個字…"
           }
         }
       }
     }
   },
-  "version": "1.0"
+  "version" : "1.0"
 }
