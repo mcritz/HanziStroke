@@ -8,7 +8,7 @@ struct Sample: Identifiable, Hashable {
     var id: String { character }
 }
 
-private let samples: [(title: String, items: [Sample])] = [
+private let samples: [(title: LocalizedStringResource, items: [Sample])] = [
     ("Basics", [
         Sample(character: "一", pinyin: "yī", meaning: "one"),
         Sample(character: "人", pinyin: "rén", meaning: "person"),
@@ -59,8 +59,8 @@ struct ContentView: View {
                     }
                 }
 
-                ForEach(samples, id: \.title) { group in
-                    Section(LocalizedStringKey(group.title)) {
+                ForEach(samples, id: \.title.key) { group in
+                    Section {
                         ForEach(group.items) { sample in
                             NavigationLink(value: sample) {
                                 HStack(spacing: 16) {
@@ -76,6 +76,8 @@ struct ContentView: View {
                                 }
                             }
                         }
+                    } header: {
+                        Text(group.title)
                     }
                 }
             }

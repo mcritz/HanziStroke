@@ -11,10 +11,7 @@
         }
       }
     },
-    "%lld" : {
-
-    },
-    "%lld strokes" : {
+        "%lld strokes" : {
       "comment" : "Number of strokes in a character; has plural variations",
       "localizations" : {
         "en" : {

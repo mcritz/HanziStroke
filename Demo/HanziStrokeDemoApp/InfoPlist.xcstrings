@@ -28,6 +28,12 @@
             "state" : "new",
             "value" : "HanziStrokeDemoApp"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "漢字筆順"
+          }
         }
       }
     }

@@ -60,7 +60,7 @@ public struct StrokeStepsView: View {
         .aspectRatio(1, contentMode: .fit)
         .overlay(alignment: .topLeading) {
             if showsNumbers {
-                Text("\(step + 1)")
+                Text(step + 1, format: .number)
                     .font(.caption2.monospacedDigit())
                     .foregroundStyle(.secondary)
                     .padding(3)
