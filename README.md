@@ -20,6 +20,7 @@ HanziStrokeDemo()
 let c = try await HanziDataLoader.load("書")             // bundle → disk cache → CDN
 StrokeOrderView(character: c, radicalColor: .blue)      // animated; tap to replay
 StrokeOrderView(character: c, speed: 0.5, loops: true)
+StrokeOrderView(character: c2, startDelay: c.animationDuration())  // play after c finishes
 StrokeStepsView(character: c, panelSize: 56)            // one panel per stroke, start dot on the new stroke
 ```
 
