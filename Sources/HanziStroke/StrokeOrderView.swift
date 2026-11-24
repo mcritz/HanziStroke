@@ -8,6 +8,8 @@ public struct StrokeOrderView: View {
     public let character: HanziCharacter
     public var speed: Double
     public var delayBetweenStrokes: TimeInterval
+    /// Time before the first stroke starts, e.g. to play several characters one after another.
+    public var startDelay: TimeInterval
     public var loops: Bool
     public var strokeColor: Color
     public var radicalColor: Color?
@@ -26,6 +28,7 @@ public struct StrokeOrderView: View {
     public init(character: HanziCharacter,
                 speed: Double = 1,
                 delayBetweenStrokes: TimeInterval = 0.3,
+                startDelay: TimeInterval = 0,
                 loops: Bool = false,
                 strokeColor: Color = .primary,
                 radicalColor: Color? = nil,
@@ -34,6 +37,7 @@ public struct StrokeOrderView: View {
         self.character = character
         self.speed = speed
         self.delayBetweenStrokes = delayBetweenStrokes
+        self.startDelay = startDelay
         self.loops = loops
         self.strokeColor = strokeColor
         self.radicalColor = radicalColor
@@ -111,12 +115,26 @@ public struct StrokeOrderView: View {
         return strokeColor
     }
 
-    /// Same pacing as Hanzi Writer: duration grows with median length.
     private func makeSchedule() -> [(start: TimeInterval, duration: TimeInterval)] {
+        character.strokeSchedule(speed: speed, delayBetweenStrokes: delayBetweenStrokes, startDelay: startDelay)
+    }
+}
+
+extension HanziCharacter {
+    /// How long ``StrokeOrderView`` takes to draw this character with the same settings,
+    /// not counting `startDelay`. Use it to chain characters with `startDelay`.
+    public func animationDuration(speed: Double = 1, delayBetweenStrokes: TimeInterval = 0.3) -> TimeInterval {
+        guard let last = strokeSchedule(speed: speed, delayBetweenStrokes: delayBetweenStrokes).last else { return 0 }
+        return last.start + last.duration
+    }
+
+    /// Same pacing as Hanzi Writer: duration grows with median length.
+    func strokeSchedule(speed: Double, delayBetweenStrokes: TimeInterval,
+                        startDelay: TimeInterval = 0) -> [(start: TimeInterval, duration: TimeInterval)] {
         var schedule: [(start: TimeInterval, duration: TimeInterval)] = []
-        var cursor: TimeInterval = 0
-        for index in 0..<character.strokeCount {
-            let duration = (Double(character.medianLength(index)) + 600) / (3000 * max(speed, 0.01))
+        var cursor = startDelay
+        for index in 0..<strokeCount {
+            let duration = (Double(medianLength(index)) + 600) / (3000 * max(speed, 0.01))
             schedule.append((cursor, duration))
             cursor += duration + delayBetweenStrokes
         }

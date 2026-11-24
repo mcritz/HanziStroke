@@ -36,6 +36,20 @@ final class HanziStrokeTests: XCTestCase {
         XCTAssertEqual(r.radicalStrokes, [1])
     }
 
+    func testAnimationDurationMatchesSchedule() {
+        let p = Path(CGRect(x: 0, y: 0, width: 1, height: 1))
+        // Medians 0 and 300 units long: (0 + 600) / 3000 = 0.2 s and (300 + 600) / 3000 = 0.3 s.
+        let c = HanziCharacter(character: "x", outlines: [p, p],
+                               medians: [[.zero], [.zero, CGPoint(x: 300, y: 0)]],
+                               radicalStrokes: [])
+        XCTAssertEqual(c.animationDuration(), 0.2 + 0.3 + 0.3, accuracy: 0.0001)
+        XCTAssertEqual(c.animationDuration(speed: 2, delayBetweenStrokes: 0), 0.25, accuracy: 0.0001)
+
+        let delayed = c.strokeSchedule(speed: 1, delayBetweenStrokes: 0.3, startDelay: 2)
+        XCTAssertEqual(delayed[0].start, 2, accuracy: 0.0001)
+        XCTAssertEqual(delayed[1].start, 2.5, accuracy: 0.0001)
+    }
+
     // MARK: Malformed data throws instead of crashing
 
     func testMismatchedCountsThrow() {
