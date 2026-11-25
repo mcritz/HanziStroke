@@ -76,7 +76,6 @@
       }
     },
     "Basics" : {
-      "extractionState" : "stale",
       "localizations" : {
         "zh-Hant" : {
           "stringUnit" : {
@@ -107,7 +106,6 @@
       }
     },
     "Common" : {
-      "extractionState" : "stale",
       "localizations" : {
         "zh-Hant" : {
           "stringUnit" : {
@@ -338,7 +336,6 @@
       }
     },
     "Traditional" : {
-      "extractionState" : "stale",
       "localizations" : {
         "zh-Hant" : {
           "stringUnit" : {
