@@ -8,7 +8,7 @@ iOS 17 / macOS 14, no dependencies.
 
 ## Use
 
-Add the folder as a local Swift package (File ▸ Add Package Dependencies ▸ Add Local…), then:
+Add this Swift Package as a dependency.
 
 ```swift
 import HanziStroke
